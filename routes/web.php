@@ -17,7 +17,11 @@ Route::get('/', function () {
 
 Route::get('/', 'PagesController@index');
 
-Route::get('/shaza', 'ShazaController@index');
+Route::get('/about', 'PagesController@about');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
