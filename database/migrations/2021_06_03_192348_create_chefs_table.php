@@ -18,7 +18,7 @@ class CreateChefsTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->integer('phone_number');
-            $table->text('email');
+            $table->string('email')->index();
             $table->timestamps();
         });
     }

@@ -25,3 +25,15 @@ Route::get('/about', 'PagesController@about');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/meals/create', 'MealsController@create')->name('meals.create');
+
+Route::get('/meals', 'MealsController@index')->name('meals.index');
+
+Route::get('/meals/{id}', 'MealsController@destroy')->name('meals.destroy');
+
+Route::get('/meals/{id}/edit', 'MealsController@edit')->name('meals.edit');
+
+Route::post('/meals/{id}/update', 'MealsController@update')->name('meals.update');
+
+Route::post('/meals/store', 'MealsController@store')->name('meals.store');

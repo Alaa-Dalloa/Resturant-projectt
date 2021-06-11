@@ -34,6 +34,17 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Meal
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('meals.index') }}">All Meal</a>
+                                <a class="dropdown-item" href="{{ route('meals.create') }}">Add Meal</a>
+                               
+                            </div>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
