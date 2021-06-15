@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container"> 
-    	<h1 class="text-center">Add Meal</h1>
+    	<h1 class="text-center">Edit Meal</h1>
     	<div class="box">
     		
-				 <form action="{{ route('meals.store') }}" method="POST">
+				 <form action="/meals/{{ $meal->id}}/update" method="POST">
 				 	@csrf
 				  <div class="form-group">
 				    <label for="name">Name:</label>
@@ -13,6 +13,7 @@
 				     class="form-control" 
 				     placeholder="Enter name"
 				      id="name"
+				      value="{{ $meal->name }}" 
 				      name="name">
 				  </div>
 
@@ -60,26 +61,31 @@
 
 
 				  <div class="form-group">
-				    <label for="type_id">Type:</label>
-				    <select class="form-control" name="type_id">
-				    	@foreach($types as $one)
-				    	<option value="{{$one->id}}">{{$one->name}}</option>
-				    	@endforeach
-				    </select>
+				    <label for="type_id">type_id:</label>
+				    <input type="bigInteger"
+				     class="form-control" 
+				     placeholder="Enter type_id"
+				      id="type_id"
+				      name="type_id">
 				  </div>
 
-				    <div class="form-group">
-				    <label for="image_id">Image:</label>
-				    <select class="form-control" name="image_id">
-				    	@foreach($images as $one)
-				    	<option value="{{$one->id}}">{{$one->name}}</option>
-				    	@endforeach
-				    </select>
+
+
+				  <div class="form-group">
+				    <label for="image_id">image_id:</label>
+				    <input type="bigInteger"
+				     class="form-control" 
+				     placeholder="Enter image_id"
+				      id="image_id"
+				      name="image_id">
 				  </div>
+
+
+
 
 				 
 			
-				  <button type="submit" class="btn btn-primary">Add</button>
+				  <button type="submit" class="btn btn-primary">update</button>
 				</form>
     	</div>
     </div>

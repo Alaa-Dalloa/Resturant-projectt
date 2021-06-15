@@ -45,6 +45,19 @@
                                
                             </div>
                         </li>
+
+
+                        <!--Images-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                           Images
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('images.index') }}">All Images</a>
+                                <a class="dropdown-item" href="{{ route('images.create') }}">Add Images</a>
+                               
+                            </div>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

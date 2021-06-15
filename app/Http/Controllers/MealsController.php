@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\meal;
+use App\Image;
+
 
 class MealsController extends Controller
 {
    public function create(){
-   	return view('meals.create');
+   	$images = Image:all();
+   	return view('meals.create', compact('images'));
    }
 
     public function store(Request $request){
