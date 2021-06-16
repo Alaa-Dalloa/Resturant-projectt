@@ -28,12 +28,10 @@
 
 				  
 				  <div class="form-group">
-				    <label for="description">description:</label>
-				    <input type="text"
-				     class="form-control" 
-				     placeholder="Enter description"
-				      id="description"
-				      name="description">
+				    <label for="description">Description:</label>
+				      <textarea name="description"  class="form-control">
+				      	
+				      </textarea>
 				  </div>
 				 
 
@@ -50,12 +48,12 @@
 
 				  
 				  <div class="form-group">
-				    <label for="is_delivery">is_delivery:</label>
-				    <input type="boolean"
-				     class="form-control" 
-				     placeholder="Enter is_delivery"
-				      id="is_delivery"
-				      name="is_delivery">
+				    <label for="is_delivery">Is_delivery:</label>
+				    <select class="form-control" name="is_delivery">
+				    	<option value="1">YES</option>
+				    	<option value="0">NO</option>
+				     </select>
+				   
 				  </div>
 
 

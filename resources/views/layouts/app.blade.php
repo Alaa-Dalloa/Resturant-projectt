@@ -37,10 +37,10 @@
                         <!-- Dropdown -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Meal
+                            Meals
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('meals.index') }}">All Meal</a>
+                                <a class="dropdown-item" href="{{ route('meals.index') }}">All Meals</a>
                                 <a class="dropdown-item" href="{{ route('meals.create') }}">Add Meal</a>
                                
                             </div>
@@ -54,8 +54,31 @@
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route('images.index') }}">All Images</a>
-                                <a class="dropdown-item" href="{{ route('images.create') }}">Add Images</a>
+                                <a class="dropdown-item" href="{{ route('images.create') }}">Add Image</a>
                                
+                            </div>
+                        </li>
+
+                        <!--Types-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Types
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('types.index') }}">All Types</a>
+                                <a class="dropdown-item" href="{{ route('types.create') }}">Add Type</a>
+                            </div>
+                        </li>
+
+
+                           <!--Chefs-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Chefs
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('chefs.index') }}">All Chefs</a>
+                                <a class="dropdown-item" href="{{ route('chefs.create') }}">Add Chef</a>
                             </div>
                         </li>
                     </ul>

@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\meal;
+use App\Meal;
 use App\Image;
+use App\Type;
 
 
 class MealsController extends Controller
 {
    public function create(){
-   	$images = Image:all();
-   	return view('meals.create', compact('images'));
+   	$images = Image::all();
+   	$types = Type::all();
+   	return view('meals.create', compact('images') , compact('types'));
    }
 
     public function store(Request $request){
-	    $meal = new meal;
+	    $meal = new Meal;
 	    $meal->name = $request->name;
 	    $meal->price = $request->price;
 	    $meal->description = $request->description;
@@ -31,7 +33,7 @@ class MealsController extends Controller
    }
 
     public function index(){
-	   $meals = meal::all();
+	   $meals = Meal::all();
 
 	   return view('meals.index', compact('meals'));
    }

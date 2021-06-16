@@ -12,7 +12,7 @@ class ImagesController extends Controller
    }
 
     public function store(Request $request){
-	    $image = new image;
+	    $image = new Image;
 	    $image->name = $request->name;
 	
 
@@ -23,7 +23,7 @@ class ImagesController extends Controller
    }
 
     public function index(){
-	   $images = image::all();
+	   $images = Image::all();
 
 	   return view('images.index', compact('images'));
    }
