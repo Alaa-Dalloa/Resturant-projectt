@@ -65,4 +65,25 @@ Route::post('/chefs/{id}/update', 'ChefsController@update')->name('chefs.update'
 Route::post('/chefs/store', 'ChefsController@store')->name('chefs.store');
 
 
+
+
+Route::get('/branchs/create', 'BranchsController@create')->name('branchs.create');
+Route::get('/branchs', 'BranchsController@index')->name('branchs.index');
+Route::get('/branchs/{id}', 'BranchsController@destroy')->name('branchs.destroy');
+Route::get('/branchs/{id}/edit', 'BranchsController@edit')->name('branchs.edit');
+Route::post('/branchs/{id}/update', 'BranchsController@update')->name('branchs.update');
+Route::post('/branchs/store', 'BranchsController@store')->name('branchs.store');
+
+
+
+
+Route::get('/systems/create', 'SystemsController@create')->name('systems.create');
+Route::get('/systems', 'SystemsController@index')->name('systems.index');
+Route::get('/systems/{id}', 'SystemsController@destroy')->name('systems.destroy');
+Route::get('/systems/{id}/edit', 'SystemsController@edit')->name('systems.edit');
+Route::post('/systems/{id}/update', 'SystemsController@update')->name('branchs.update');
+Route::post('/systems/store', 'SystemsController@store')->name('systems.store');
+
+
+
 Route::get('/', 'ViewController@index');

@@ -81,6 +81,32 @@
                                 <a class="dropdown-item" href="{{ route('chefs.create') }}">Add Chef</a>
                             </div>
                         </li>
+
+
+
+                        <!--Branchs-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Branchs
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('branchs.index') }}">All Branchs</a>
+                                <a class="dropdown-item" href="{{ route('branchs.create') }}">Add Branch</a>
+                            </div>
+                        </li>
+
+
+
+                           <!--Systems-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Systems
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('systems.index') }}">All Systems</a>
+                                <a class="dropdown-item" href="{{ route('branchs.create') }}">Add System</a>
+                            </div>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

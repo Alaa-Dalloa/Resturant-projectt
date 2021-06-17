@@ -7,7 +7,7 @@ use App\Image;
 
 class ImagesController extends Controller
 {
-     public function create(){
+    public function create(){
    	return view('images.create');
    }
 
