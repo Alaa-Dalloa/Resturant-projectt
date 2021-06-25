@@ -13,18 +13,17 @@ class ChefsController extends Controller
 
     public function store(Request $request){
 	    $chef = new Chef;
-	    $meal->first_name = $request->first_name;
-	    $meal->last_name = $request->last_name;
-	    $meal->phone_number = $request->phone_number;
-	    $meal->email = $request->email;
+	    $chef->first_name   = $request->first_name;
+	    $chef->last_name    = $request->last_name;
+	    $chef->phone_number = $request->phone_number;
+	    $chef->email        = $request->email;
 
 	    $chef->save();
-
 	   	return back();
    }
 
     public function index(){
-	   $chefs = Chef::all();
+	   $chefs = Chef::with('branches')->get();
 
 	   return view('chefs.index', compact('chefs'));
    }
@@ -32,7 +31,7 @@ class ChefsController extends Controller
 
      public function destroy($id){
 	   //$chefs = chef::where('id',$id)->first();
-	   $chef = chef::find($id);
+	   $chef = Chef::find($id);
 
 	   $chef->delete();
 
@@ -42,20 +41,21 @@ class ChefsController extends Controller
 
       public function edit($id){
 	   //$chefs = chef::where('id',$id)->first();
-	   $chef = chef::find($id);
+	   $chef = Chef::find($id);
 
 	   return view ('chefs.edit',compact('chef'));
    }
 
       public function update($id,Request $request){
 	 
-	   $chef = chef::find($id);
-	   $chef->name = $request->name;
+	   $chef = Chef::find($id);
+	    $chef->first_name   = $request->first_name;
+	    $chef->last_name    = $request->last_name;
+	    $chef->phone_number = $request->phone_number;
+	    $chef->email        = $request->email;
 
-	   
 	    $chef->save();
-
 	   	return back();
-   }
+	   }
 
 }

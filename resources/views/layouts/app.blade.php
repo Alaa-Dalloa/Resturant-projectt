@@ -84,14 +84,14 @@
 
 
 
-                        <!--Branchs-->
+                        <!--Branches-->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Branchs
+                            Branches
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('branchs.index') }}">All Branchs</a>
-                                <a class="dropdown-item" href="{{ route('branchs.create') }}">Add Branch</a>
+                                <a class="dropdown-item" href="{{ route('branches.index') }}">All Branches</a>
+                                <a class="dropdown-item" href="{{ route('branches.create') }}">Add Branch</a>
                             </div>
                         </li>
 
@@ -104,7 +104,7 @@
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route('systems.index') }}">All Systems</a>
-                                <a class="dropdown-item" href="{{ route('branchs.create') }}">Add System</a>
+                                <a class="dropdown-item" href="{{ route('systems.create') }}">Add System</a>
                             </div>
                         </li>
                     </ul>

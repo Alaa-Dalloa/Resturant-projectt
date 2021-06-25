@@ -5,7 +5,7 @@
     	<h1 class="text-center">Add Meal</h1>
     	<div class="box">
     		
-				 <form action="{{ route('meals.store') }}" method="POST">
+				 <form action="{{ route('meals.store') }}" method="POST"  enctype="multipart/form-data ">
 				 	@csrf
 				  <div class="form-group">
 				    <label for="name">Name:</label>

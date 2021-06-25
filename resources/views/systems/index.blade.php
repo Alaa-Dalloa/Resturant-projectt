@@ -2,24 +2,24 @@
 
 @section('content')
     <div class="container"> 
-    	<h1 class="text-center">All Meal</h1>
+    	<h1 class="text-center">All System</h1>
 			<table class="table table-bordered">
 			    <thead>
 			      <tr>
 			        <th>ID</th>
-			        <th>Name</th>
+			        <th>location</th>
 			        <th>Control</th>
 			      </tr>
 			    </thead>
 			    <tbody>
 
-			    @foreach($meals as $meal)
+			    @foreach($systems as $system)
 			     <tr>
-			        <td>{{ $meal->id }}</td>
-			        <td>{{ $meal->name }}</td>
+			        <td>{{ $system->id }}</td>
+			        <td>{{ $system->location }}</td>
 			        <td>
-			        	<a href="/meals/{{ $meal->id }}/edit" class="btn btn-success">Edit</a>
-			        	<a href="/meals/{{ $meal->id }}" class="btn btn-danger">Delete</a>
+			        	<a href="/systems/{{ $system->id }}/edit" class="btn btn-success">Edit</a>
+			        	<a href="/systems/{{ $system->id }}" class="btn btn-danger">Delete</a>
 			        </td>
 				<tr>
 			    @endforeach

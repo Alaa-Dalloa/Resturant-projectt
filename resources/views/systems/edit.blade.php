@@ -2,87 +2,76 @@
 
 @section('content')
     <div class="container"> 
-    	<h1 class="text-center">Edit Meal</h1>
+    	<h1 class="text-center">Edit System</h1>
     	<div class="box">
     		
-				 <form action="/meals/{{ $meal->id}}/update" method="POST">
+				 <form action="/systems/{{ $system->id}}/update" method="POST">
 				 	@csrf
+				 <div class="form-group">
+				    <label for="about_us">About_us:</label>
+				      <textarea name="about_us"  class="form-control" value="{{ $system->about_us }}" >
+				      	
+				      </textarea>
+				  </div>
+
+
 				  <div class="form-group">
-				    <label for="name">Name:</label>
+				    <label for="participation">Participation:</label>
+				      <textarea name="participation"  class="form-control" value="{{ $system->participation }}">
+				      	
+				      </textarea>
+				  </div>
+
+
+				   <div class="form-group">
+				    <label for="email">Email:</label>
 				    <input type="string"
 				     class="form-control" 
-				     placeholder="Enter name"
+				     placeholder="Enter email"
 				      id="name"
-				      value="{{ $meal->name }}" 
-				      name="name">
+				      value="{{ $system->email }}"
+				      name="email">
 				  </div>
 
-				
-				  <div class="form-group">
-				    <label for="price">price:</label>
-				    <input type="double"
-				     class="form-control" 
-				     placeholder="Enter price"
-				      id="price"
-				      name="price">
+
+				   <div class="form-group">
+				    <label for="services">Services:</label>
+				      <textarea name="services"  class="form-control" value="{{ $system->services }}">
+				      	
+				      </textarea>
 				  </div>
 
-				  
-				  <div class="form-group">
-				    <label for="description">description:</label>
-				    <input type="text"
-				     class="form-control" 
-				     placeholder="Enter description"
-				      id="description"
-				      name="description">
-				  </div>
-				 
 
 				 
-				  <div class="form-group">
-				    <label for="calories">calories:</label>
-				    <input type="double"
+                 <div class="form-group">
+				    <label for="phone_number">Phone_number:</label>
+				    <input type="int"
 				     class="form-control" 
-				     placeholder="Enter calories"
-				      id="pcalories"
-				      name="calories">
+				     placeholder="Enter phone_number"
+				      id="name"
+				      value="{{ $system->phone_number }}"
+				      name="phone_number">
 				  </div>
 				 
 
 				  
 				  <div class="form-group">
-				    <label for="is_delivery">is_delivery:</label>
-				    <input type="boolean"
-				     class="form-control" 
-				     placeholder="Enter is_delivery"
-				      id="is_delivery"
-				      name="is_delivery">
+				    <label for="is_delivery">Is_delivery:</label>
+				    <select class="form-control" name="is_delivery"  value="{{ $system->is_delivery }}">
+				    	<option value="1">YES</option>
+				    	<option value="0">NO</option>
+				     </select>
+				   
 				  </div>
 
 
-				  <div class="form-group">
-				    <label for="type_id">type_id:</label>
-				    <input type="bigInteger"
-				     class="form-control" 
-				     placeholder="Enter type_id"
-				      id="type_id"
-				      name="type_id">
+                 <div class="form-group">
+				    <label for="location">Location:</label>
+				      <textarea name="location"  class="form-control" value="{{ $system->location }}" >
+				      	
+				      </textarea>
 				  </div>
-
-
-
-				  <div class="form-group">
-				    <label for="image_id">image_id:</label>
-				    <input type="bigInteger"
-				     class="form-control" 
-				     placeholder="Enter image_id"
-				      id="image_id"
-				      name="image_id">
-				  </div>
-
-
-
-
+				 
 				 
 			
 				  <button type="submit" class="btn btn-primary">update</button>

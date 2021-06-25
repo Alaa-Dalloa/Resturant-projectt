@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container"> 
-    	<h1 class="text-center">Add Meal</h1>
+    	<h1 class="text-center">Add System</h1>
     	<div class="box">
     		
-				 <form action="{{ route('meals.store') }}" method="POST">
+				 <form action="{{ route('systems.store') }}" method="POST">
 				 	@csrf
 				  <div class="form-group">
 				    <label for="about_us">About_us:</label>

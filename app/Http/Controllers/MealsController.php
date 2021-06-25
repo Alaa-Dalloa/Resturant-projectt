@@ -11,29 +11,29 @@ use App\Type;
 class MealsController extends Controller
 {
    public function create(){
-   	$images = Image::all();
-   	$types = Type::all();
-   	return view('meals.create', compact('images') , compact('types'));
+	   	$images = Image::all();
+	   	$types = Type::all();
+	   	return view('meals.create', compact('images') , compact('types'));
    }
 
     public function store(Request $request){
 	    $meal = new Meal;
-	    $meal->name = $request->name;
-	    $meal->price = $request->price;
+	    $meal->name        = $request->name;
+	    $meal->price       = $request->price;
 	    $meal->description = $request->description;
-	    $meal->calories = $request->calories;
+	    $meal->calories    = $request->calories;
 	    $meal->is_delivery = $request->is_delivery;
-	    $meal->type_id = $request->type_id;
-	    $meal->image_id = $request->image_id;
+	    $meal->type_id     = $request->type_id;
+	    $meal->image_id    = $request->image_id;
 
 
 	    $meal->save();
-
 	   	return back();
    }
 
     public function index(){
-	   $meals = Meal::all();
+	   $meals = Meal::with('branches')->get();
+
 
 	   return view('meals.index', compact('meals'));
    }
@@ -41,7 +41,7 @@ class MealsController extends Controller
 
      public function destroy($id){
 	   //$meals = meal::where('id',$id)->first();
-	   $meal = meal::find($id);
+	   $meal = Meal::find($id);
 
 	   $meal->delete();
 
@@ -51,19 +51,24 @@ class MealsController extends Controller
 
       public function edit($id){
 	   //$meals = meal::where('id',$id)->first();
-	   $meal = meal::find($id);
+	   $meal = Meal::find($id);
 
 	   return view ('meals.edit',compact('meal'));
    }
 
       public function update($id,Request $request){
 	 
-	   $meal = meal::find($id);
-	   $meal->name = $request->name;
+	    $meal = Meal::find($id);
+	    $meal->name        = $request->name;
+	    $meal->price       = $request->price;
+	    $meal->description = $request->description;
+	    $meal->calories    = $request->calories;
+	    $meal->is_delivery = $request->is_delivery;
+	    $meal->type_id     = $request->type_id;
+	    $meal->image_id    = $request->image_id;
 
-	   
+
 	    $meal->save();
-
 	   	return back();
    }
 

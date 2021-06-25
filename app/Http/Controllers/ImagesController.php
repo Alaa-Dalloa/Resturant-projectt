@@ -14,16 +14,20 @@ class ImagesController extends Controller
     public function store(Request $request){
 	    $image = new Image;
 	    $image->name = $request->name;
-	
+
+
+			  //generate a new name
+			  $photoName = rand().time().'.'.$request->name->getClientOriginalExtension();
+			  $request->name->move(public_path('upload'), $photoName);
+			  $image->name =  $photoName;
 
 
 	    $image->save();
-
 	   	return back();
    }
 
     public function index(){
-	   $images = Image::all();
+	   $images = Image::with('meals')->get();
 
 	   return view('images.index', compact('images'));
    }
@@ -41,19 +45,24 @@ class ImagesController extends Controller
 
       public function edit($id){
 	   //$images = image::where('id',$id)->first();
-	   $image = image::find($id);
+	   $image = Image::find($id);
 
 	   return view ('images.edit',compact('image'));
    }
 
       public function update($id,Request $request){
 	 
-	   $image = image::find($id);
-	   $image->name = $request->name;
+	   $image = Image::find($id);
+       $image->name = $request->name;
 
-	   
+
+			  //generate a new name
+			  $photoName = rand().time().'.'.$request->name->getClientOriginalExtension();
+			  $request->name->move(public_path('upload'), $photoName);
+			  $image->name =  $photoName;
+
+
 	    $image->save();
-
 	   	return back();
    }
 

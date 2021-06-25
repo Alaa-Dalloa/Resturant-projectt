@@ -14,13 +14,14 @@ class TypesController extends Controller
     public function store(Request $request){
 	    $type = new Type;
 	    $type->name = $request->name;
-	    $type->save();
 
+	    $type->save();
 	   	return back();
    }
 
     public function index(){
-	   $types = Type::all();
+	   $types = Type::with('meals')->get();
+
 
 	   return view('types.index', compact('types'));
    }
@@ -28,7 +29,7 @@ class TypesController extends Controller
 
      public function destroy($id){
 	   //$types = type::where('id',$id)->first();
-	   $type = type::find($id);
+	   $type = Type::find($id);
 
 	   $type->delete();
 
@@ -38,19 +39,17 @@ class TypesController extends Controller
 
       public function edit($id){
 	   //$types = type::where('id',$id)->first();
-	   $type = type::find($id);
+	   $type = Type::find($id);
 
 	   return view ('types.edit',compact('type'));
    }
 
       public function update($id,Request $request){
 	 
-	   $type = type::find($id);
+	   $type = Type::find($id);
 	   $type->name = $request->name;
 
-	   
 	    $type->save();
-
 	   	return back();
    }
 

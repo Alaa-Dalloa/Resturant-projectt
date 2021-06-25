@@ -38,6 +38,7 @@ Route::post('/meals/store', 'MealsController@store')->name('meals.store');
 
 
 
+
 Route::get('/images/create', 'ImagesController@create')->name('images.create');
 Route::get('/images', 'ImagesController@index')->name('images.index');
 Route::get('/images/{id}', 'ImagesController@destroy')->name('images.destroy');
@@ -67,12 +68,12 @@ Route::post('/chefs/store', 'ChefsController@store')->name('chefs.store');
 
 
 
-Route::get('/branchs/create', 'BranchsController@create')->name('branchs.create');
-Route::get('/branchs', 'BranchsController@index')->name('branchs.index');
-Route::get('/branchs/{id}', 'BranchsController@destroy')->name('branchs.destroy');
-Route::get('/branchs/{id}/edit', 'BranchsController@edit')->name('branchs.edit');
-Route::post('/branchs/{id}/update', 'BranchsController@update')->name('branchs.update');
-Route::post('/branchs/store', 'BranchsController@store')->name('branchs.store');
+Route::get('/branches/create', 'BranchesController@create')->name('branches.create');
+Route::get('/branches', 'BranchesController@index')->name('branches.index');
+Route::get('/branches/{id}', 'BranchesController@destroy')->name('branches.destroy');
+Route::get('/branches/{id}/edit', 'BranchesController@edit')->name('branches.edit');
+Route::post('/branches/{id}/update', 'BranchesController@update')->name('branches.update');
+Route::post('/branches/store', 'BranchesController@store')->name('branches.store');
 
 
 
@@ -81,7 +82,7 @@ Route::get('/systems/create', 'SystemsController@create')->name('systems.create'
 Route::get('/systems', 'SystemsController@index')->name('systems.index');
 Route::get('/systems/{id}', 'SystemsController@destroy')->name('systems.destroy');
 Route::get('/systems/{id}/edit', 'SystemsController@edit')->name('systems.edit');
-Route::post('/systems/{id}/update', 'SystemsController@update')->name('branchs.update');
+Route::post('/systems/{id}/update', 'SystemsController@update')->name('systems.update');
 Route::post('/systems/store', 'SystemsController@store')->name('systems.store');
 
 

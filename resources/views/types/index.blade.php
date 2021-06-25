@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container"> 
-    	<h1 class="text-center">All Meal</h1>
+    	<h1 class="text-center">All Type</h1>
 			<table class="table table-bordered">
 			    <thead>
 			      <tr>
@@ -13,13 +13,13 @@
 			    </thead>
 			    <tbody>
 
-			    @foreach($meals as $meal)
+			    @foreach($types as $type)
 			     <tr>
-			        <td>{{ $meal->id }}</td>
-			        <td>{{ $meal->name }}</td>
+			        <td>{{ $type->id }}</td>
+			        <td>{{ $type->name }}</td>
 			        <td>
-			        	<a href="/meals/{{ $meal->id }}/edit" class="btn btn-success">Edit</a>
-			        	<a href="/meals/{{ $meal->id }}" class="btn btn-danger">Delete</a>
+			        	<a href="/types/{{ $type->id }}/edit" class="btn btn-success">Edit</a>
+			        	<a href="/types/{{ $type->id }}" class="btn btn-danger">Delete</a>
 			        </td>
 				<tr>
 			    @endforeach

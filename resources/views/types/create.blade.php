@@ -13,6 +13,7 @@
 				     class="form-control" 
 				     placeholder="Enter name"
 				      id="name"
+				      
 				      name="name">
 				  </div>
 

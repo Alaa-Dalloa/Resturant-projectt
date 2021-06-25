@@ -2,86 +2,54 @@
 
 @section('content')
     <div class="container"> 
-    	<h1 class="text-center">Edit Meal</h1>
+    	<h1 class="text-center">Edit Chef</h1>
     	<div class="box">
     		
-				 <form action="/meals/{{ $meal->id}}/update" method="POST">
+				 <form action="/chefs/{{ $chef->id}}/update" method="POST">
 				 	@csrf
 				  <div class="form-group">
-				    <label for="name">Name:</label>
+				    <label for="first_name">First_name:</label>
 				    <input type="string"
 				     class="form-control" 
-				     placeholder="Enter name"
+				     placeholder="Enter first_name"
 				      id="name"
-				      value="{{ $meal->name }}" 
-				      name="name">
+				      value=" {{ $chef->first_name }}" 
+				      name="first_name">
 				  </div>
 
-				
-				  <div class="form-group">
-				    <label for="price">price:</label>
-				    <input type="double"
+
+				   <div class="form-group">
+				    <label for="last_name">Last_name:</label>
+				    <input type="string"
 				     class="form-control" 
-				     placeholder="Enter price"
-				      id="price"
-				      name="price">
+				     placeholder="Enter last_name"
+				      id="name"
+				      value=" {{ $chef->last_name }}" 
+				      name="last_name">
 				  </div>
 
-				  
-				  <div class="form-group">
-				    <label for="description">description:</label>
-				    <input type="text"
+
+				   <div class="form-group">
+				    <label for="phone_number">Phone_number:</label>
+				    <input type="int"
 				     class="form-control" 
-				     placeholder="Enter description"
-				      id="description"
-				      name="description">
+				     placeholder="Enter phone_number"
+				      id="name"
+				      value=" {{ $chef->phone_number }}" 
+				      name="phone_number">
 				  </div>
+
 				 
-
-				 
-				  <div class="form-group">
-				    <label for="calories">calories:</label>
-				    <input type="double"
+				   <div class="form-group">
+				    <label for="email">Email:</label>
+				    <input type="string"
 				     class="form-control" 
-				     placeholder="Enter calories"
-				      id="pcalories"
-				      name="calories">
+				     placeholder="Enter email"
+				      id="name"
+				      value=" {{ $chef->email}}" 
+				      name="email">
 				  </div>
-				 
-
-				  
-				  <div class="form-group">
-				    <label for="is_delivery">is_delivery:</label>
-				    <input type="boolean"
-				     class="form-control" 
-				     placeholder="Enter is_delivery"
-				      id="is_delivery"
-				      name="is_delivery">
-				  </div>
-
-
-				  <div class="form-group">
-				    <label for="type_id">type_id:</label>
-				    <input type="bigInteger"
-				     class="form-control" 
-				     placeholder="Enter type_id"
-				      id="type_id"
-				      name="type_id">
-				  </div>
-
-
-
-				  <div class="form-group">
-				    <label for="image_id">image_id:</label>
-				    <input type="bigInteger"
-				     class="form-control" 
-				     placeholder="Enter image_id"
-				      id="image_id"
-				      name="image_id">
-				  </div>
-
-
-
+			
 
 				 
 			

@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="container"> 
-    	<h1 class="text-center">Add Branch</h1>
+    	<h1 class="text-center">Edit Branch</h1>
     	<div class="box">
     		
-				 <form action="{{ route('branchs.store') }}" method="POST">
+				 <form action="/branches/{{ $branch->id}}/update" method="POST">
 				 	@csrf
-				  <div class="form-group">
+		         <div class="form-group">
 				    <label for="name">Name:</label>
 				    <input type="string"
 				     class="form-control" 
@@ -50,13 +50,16 @@
 				    <label for="chef_id">Chef:</label>
 				    <select class="form-control" name="chef_id">
 				    	@foreach($chefs as $one)
-				    	<option value="{{$one->id}}">{{$one->name}}</option>
+				    	<option value="{{$one->id}}">{{$one->first_name}}</option>
 				    	@endforeach
 				    </select>
 				  </div>
 
+
+
+				 
 			
-				  <button type="submit" class="btn btn-primary">Add</button>
+				  <button type="submit" class="btn btn-primary">update</button>
 				</form>
     	</div>
     </div>

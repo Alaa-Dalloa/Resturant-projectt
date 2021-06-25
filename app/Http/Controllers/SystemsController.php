@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\System;
 
 class SystemsController extends Controller
 {
@@ -12,15 +13,14 @@ class SystemsController extends Controller
 
     public function store(Request $request){
 	    $system = new System;
-	    $system->about_us = $request->about_us;
-	    $meal->participation = $request->participation;
-	    $meal->email = $request->email;
-	    $meal->services = $request->services;
-	    $meal->phone_number = $request->phone_number;
-	    $meal->location = $request->location;
+	    $system->about_us    = $request->about_us;
+	    $system->participation = $request->participation;
+	    $system->email         = $request->email;
+	    $system->services      = $request->services;
+	    $system->phone_number  = $request->phone_number;
+	    $system->location      = $request->location;
 
 	    $system->save();
-
 	   	return back();
    }
 
@@ -33,7 +33,7 @@ class SystemsController extends Controller
 
      public function destroy($id){
 	   //$systems = system::where('id',$id)->first();
-	   $system = system::find($id);
+	   $system = System::find($id);
 
 	   $system->delete();
 
@@ -43,19 +43,22 @@ class SystemsController extends Controller
 
       public function edit($id){
 	   //$systems = system::where('id',$id)->first();
-	   $system = system::find($id);
+	   $system = System::find($id);
 
 	   return view ('systems.edit',compact('system'));
    }
 
       public function update($id,Request $request){
 	 
-	   $system = system::find($id);
-	   $system->name = $request->name;
+	    $system = System::find($id);
+	    $system->about_us    = $request->about_us;
+	    $system->participation = $request->participation;
+	    $system->email         = $request->email;
+	    $system->services      = $request->services;
+	    $system->phone_number  = $request->phone_number;
+	    $system->location      = $request->location;
 
-	   
 	    $system->save();
-
 	   	return back();
    }
 }
